@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Auth from "./global/auth/authController.jsx";
 import ChatComponent from "./components/discussion/ChatComponent.jsx";
+import AuthContainer from "./global/auth/AuthPage.jsx";
 
 // Protected Route Wrapper (All Routes Are Protected Except Login)
 const ProtectedRoute = () => {
@@ -30,8 +30,8 @@ function App() {
         <ToastContainer />
         <Routes>
           {/* Public route: Login page only */}
-          <Route path="/login" element={<Auth />} />
-          
+          <Route path="/login" element={<AuthContainer />} />
+
           {/* All other routes are protected */}
           <Route element={<ProtectedRoute />}>
             <Route path="/discussion" element={<ChatComponent />} />

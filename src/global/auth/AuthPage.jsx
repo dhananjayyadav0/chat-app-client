@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
 
-const Auth = () => {
+const AuthContainer = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -32,4 +32,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default AuthContainer;
