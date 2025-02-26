@@ -268,7 +268,7 @@ const ChatComponent = () => {
                           size={14}
                           className="inline mr-1 text-green-300"
                         /> */}
-                      <span className="text-green-600">Online</span>
+                      <span className="text-green-300">Online</span>
                       </>
                     ) : (
                       <>
@@ -276,7 +276,7 @@ const ChatComponent = () => {
                           size={14}
                           className="inline mr-1 text-red-300"
                         /> */}
-                       <span className="text-red-600">Offline</span>
+                       <span className="text-red-300">Offline</span>
                       </>
                     )}
                   </>
