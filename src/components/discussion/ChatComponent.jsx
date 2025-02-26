@@ -257,7 +257,7 @@ const ChatComponent = () => {
               <h1 className="text-xl font-bold">
                 {currentReceiver
                   ? `Chat with ${currentReceiver.username}`
-                  : "Support Chat"}
+                  : "You"}
               </h1>
               <p className="text-xs text-indigo-200 flex items-center">
                 {currentReceiver ? (
