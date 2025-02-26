@@ -245,7 +245,7 @@ const ChatComponent = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
-      {/* Chat Container with max width for large screens but responsive */}
+      {/* Chat Container */}
       <div className="w-full max-w-4xl mx-auto h-full flex flex-col shadow-xl bg-white rounded-lg overflow-hidden">
         {/* Header */}
         <div className="bg-indigo-600 text-white p-4 flex justify-between items-center">
@@ -264,18 +264,18 @@ const ChatComponent = () => {
                   <>
                     {otherUserOnline ? (
                       <>
-                        <Wifi
+                        {/* <Wifi
                           size={14}
                           className="inline mr-1 text-green-300"
-                        />
-                        <span className="text-green-300">Online</span>
+                        /> */}
+                        <span className="text-green-400">Online</span>
                       </>
                     ) : (
                       <>
-                        <WifiOff
+                        {/* <WifiOff
                           size={14}
                           className="inline mr-1 text-red-300"
-                        />
+                        /> */}
                         <span className="text-red-300">Offline</span>
                       </>
                     )}

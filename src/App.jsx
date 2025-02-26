@@ -31,6 +31,7 @@ function App() {
         <Routes>
           {/* Public route: Login page only */}
           <Route path="/login" element={<Auth />} />
+          
           {/* All other routes are protected */}
           <Route element={<ProtectedRoute />}>
             <Route path="/discussion" element={<ChatComponent />} />

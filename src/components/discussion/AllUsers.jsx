@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { X, Loader2, User } from "lucide-react";
-import api from "../../store/axios";
 import useFetchData from "../../hooks/global-hooks/useFetchData";
 
 const AllUsers = ({ onClose, onUserSelect }) => {
