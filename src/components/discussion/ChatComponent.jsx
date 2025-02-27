@@ -22,7 +22,9 @@ const ChatComponent = () => {
   const [typingTimeout, setTypingTimeout] = useState(null);
   const messagesEndRef = useRef(null);
   const token = useSelector((state) => state.token);
-
+  const username = token 
+  ? JSON.parse(atob(token.split(".")[1])).username || "User" 
+  : "User";
   // Connect to socket on component mount
   useEffect(() => {
     if (!token) {
@@ -245,7 +247,7 @@ const ChatComponent = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
-      {/* Chat Container */}
+      {/* Chat Container with max width for large screens but responsive */}
       <div className="w-full max-w-4xl mx-auto h-full flex flex-col shadow-xl bg-white rounded-lg overflow-hidden">
         {/* Header */}
         <div className="bg-indigo-600 text-white p-4 flex justify-between items-center">
@@ -257,7 +259,7 @@ const ChatComponent = () => {
               <h1 className="text-xl font-bold">
                 {currentReceiver
                   ? `Chat with ${currentReceiver.username}`
-                  : "Support Chat"}
+                  : "Chat App"}
               </h1>
               <p className="text-xs text-indigo-200 flex items-center">
                 {currentReceiver ? (
@@ -268,7 +270,7 @@ const ChatComponent = () => {
                           size={14}
                           className="inline mr-1 text-green-300"
                         /> */}
-                        <span className="text-green-400">Online</span>
+                        <span className="text-green-300">Online</span>
                       </>
                     ) : (
                       <>
@@ -373,8 +375,26 @@ const ChatComponent = () => {
               <div ref={messagesEndRef} />
             </div>
           ) : (
-            <div className="h-full flex items-center justify-center text-gray-500">
-              <p>Select a user to start chatting</p>
+            <div className="h-full flex flex-col items-center justify-center text-gray-500">
+              <div className="text-center">
+                <div className="mx-auto mb-4 bg-blue-100 p-6 rounded-full inline-flex">
+                  <Users size={40} className="text-blue-500" />
+                </div>
+                {/* Welcome Message */}
+                <p className="text-xl font-semibold text-gray-700">
+                  Welcome,{" "}
+                  <span className="text-blue-700">{username || "User"}</span>
+                </p>{" "}
+                <p className="mt-2 mb-4 text-md text-gray-400">
+                  Select a user to start chatting
+                </p>
+                <button
+                  className="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  onClick={() => setShowUsersModal(true)}
+                >
+                  Select User
+                </button>
+              </div>
             </div>
           )}
         </div>
