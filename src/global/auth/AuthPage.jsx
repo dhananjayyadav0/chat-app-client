@@ -7,7 +7,7 @@ const AuthContainer = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="h-screen flex items-center justify-center bg-indigo-50 p-4 overflow-hidden">
+    <div className="h-screen flex items-center justify-center bg-indigo-50 p-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-xl overflow-hidden">
         <div className="p-8">
           <div className="text-center mb-8">
