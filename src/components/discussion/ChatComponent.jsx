@@ -278,7 +278,7 @@ const ChatComponent = () => {
                           size={14}
                           className="inline mr-1 text-red-300"
                         /> */}
-                        <span className="text-red-300">Offline</span>
+                       <span className="text-red-300">Offline</span>
                       </>
                     )}
                   </>
