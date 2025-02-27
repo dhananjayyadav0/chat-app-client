@@ -7,7 +7,7 @@ const Signup = ({ switchToLogin }) => {
     <form onSubmit={handleSubmit}>
       <div className="mb-6">
         <label htmlFor="username" className="block text-gray-700 text-sm font-medium mb-2">
-          Username
+          Name
         </label>
         <input
           type="text"
@@ -18,7 +18,7 @@ const Signup = ({ switchToLogin }) => {
           className={`w-full px-4 py-3 rounded-lg border ${
             errors?.username ? "border-red-500" : "border-gray-300"
           } focus:outline-none focus:ring-2 focus:ring-blue-500`}
-          placeholder="Choose a username"
+          placeholder="Enter your full name "
         />
         {errors?.username && <p className="text-red-500 text-xs mt-1">{errors.username}</p>}
       </div>
