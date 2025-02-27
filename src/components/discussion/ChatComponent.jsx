@@ -22,9 +22,9 @@ const ChatComponent = () => {
   const [typingTimeout, setTypingTimeout] = useState(null);
   const messagesEndRef = useRef(null);
   const token = useSelector((state) => state.token);
-  const username = token 
-  ? JSON.parse(atob(token.split(".")[1])).username || "User" 
-  : "User";
+  const username = token
+    ? JSON.parse(atob(token.split(".")[1])).username || "User"
+    : "User";
   // Connect to socket on component mount
   useEffect(() => {
     if (!token) {
@@ -248,7 +248,9 @@ const ChatComponent = () => {
   return (
     <div className="flex flex-col h-screen bg-gray-100">
       {/* Chat Container with max width for large screens but responsive */}
-      <div className="w-full max-w-4xl mx-auto h-full flex flex-col shadow-xl bg-white rounded-lg overflow-hidden">
+      {/* <div className="w-full max-w-4xl mx-auto h-full flex flex-col shadow-xl bg-white rounded-lg overflow-hidden"> */}
+
+      <div className="w-full max-w-4xl mx-auto h-full flex flex-col shadow-xl bg-white rounded-lg overflow-auto md:h-[100vh] sm:h-[90vh] lg:h-[100vh] xl:h-[100vh]">
         {/* Header */}
         <div className="bg-indigo-600 text-white p-4 flex justify-between items-center">
           <div className="flex items-center">
@@ -278,7 +280,7 @@ const ChatComponent = () => {
                           size={14}
                           className="inline mr-1 text-red-300"
                         /> */}
-                       <span className="text-red-300">Offline</span>
+                        <span className="text-red-300">Offline</span>
                       </>
                     )}
                   </>
