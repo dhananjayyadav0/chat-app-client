@@ -12,7 +12,7 @@ const AuthContainer = () => {
         <div className="p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800">
-              {isLogin ? "Welcome Back" : "Create Account"}
+              {isLogin ? "Welcome" : "Create Account"}
             </h1>
             <p className="text-gray-600 mt-2">
               {isLogin
