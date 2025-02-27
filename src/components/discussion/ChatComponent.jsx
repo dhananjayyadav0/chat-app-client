@@ -375,6 +375,12 @@ const ChatComponent = () => {
           ) : (
             <div className="h-full flex items-center justify-center text-gray-500">
               <p>Select a user to start chatting</p>
+                <button
+                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                onClick={() => setShowUsersModal(true)}
+              >
+                Select User
+              </button>
             </div>
           )}
         </div>
